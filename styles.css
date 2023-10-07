@@ -1,0 +1,42 @@
+img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.atm-card {
+    width: 500px;
+    height: 350px;
+}
+
+.product {
+    text-align: left;
+}
+
+h1 {
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+body {
+    background-color: wheat;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer {
+    background-color: brown;
+}
