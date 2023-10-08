@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <script src="script.js">// JavaScript code for managing the shopping cart
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        const cartContainer = document.getElementById('cart-container');
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
-        const checkoutButton = document.getElementById('checkout');
-        
-        let cart = [];
-        
-        // Function to add an item to the cart
-        function addToCart(product) {
-            const productId = product.getAttribute('data-id');
-            const productName = product.querySelector('h2').innerText;
-            const productPrice = parseFloat(product.querySelector('.price').innerText.slice(1));
-        
-            const cartItem = {
-                id: productId,
-                name: productName,
-                price: productPrice,
-            };
-        
-            cart.push(cartItem);
-            updateCart();
-        }
-        
-        // Function to update the cart UI
-        function updateCart() {
-            cartItems.innerHTML = '';
-            let total = 0;
-        
-            cart.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.innerText = `${item.name} - $${item.price.toFixed(2)}`;
-                cartItems.appendChild(listItem);
-                total += item.price;
-            });
-        
-            cartTotal.innerText = `Total: $${total.toFixed(2)}`;
-            updateCartCount();
-        }
-        
-        // Function to update the cart count in the navigation
-        function updateCartCount() {
-            const cartLink = document.getElementById('cart');
-            cartLink.innerText = `Cart (${cart.length})`;
-        }
-        
-        // Event listeners for adding items to the cart
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                addToCart(button);
-            });
-        });
-        
-        // Event listener for showing/hiding the cart
-        document.getElementById('cart').addEventListener('click', () => {
-            cartContainer.classList.toggle('hidden');
-        });
-        
-        // Event listener for checkout button
-        checkoutButton.addEventListener('click', () => {
-            alert('Checkout functionality not implemented in this example.');
-        });
-        
-        // Initialize the cart count
-        updateCartCount();
-        </script>
-    <title>AVAILABLE PRODUCTS</title>
+    
 </head>
 <body>
     <div>
