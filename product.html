@@ -3,54 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    
+    <title>PRODUCT PAGE</title>
+    <style>
+        /* CSS styles for product items and cart */
+        .product {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cart {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }.product {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cart {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div>
-    <section class="graphics">GRAPHICS DESIGNS</section>
-    <div>
-        <img alt="" src="./images/A-Rahman.jpg" />
-            <h2>A WHATSAPP PROFILE PHOTO</h2>
-            <p>THIS IS A GRAPHICS THAT IS SUITABLE FOR YOUR PROFILE PICTURES</p>
-            <span class="price">$200.00</span>
-            <button id="button">Add to Cart</button>
+    <h1>Product Page</h1>
+    
+    <!-- Product items -->
+    <div class="product">
+        <img src="./images/new product.jpg.jpg" alt="Product Image">
+        <h2>NEW PRODUCT ADVERTISEMENT</h2>
+        <p>Price: $100</p>
+        <button onclick="addToCart('NEW PRODUCT ADVERTISEMENT', 100)">Add to Cart</button>
     </div>
-    <div>
-        <img alt="" src="./images/advert.png">
-            <h2>A WHATSAPP PROFILE PHOTO</h2>
-            <p>A SAMPLE OF AN ADVERTISING GRAPHICS</p>
-            <span class="price">$100.00</span>
-            <button id="button">Add to Cart</button>
+    
+    <div class="product">
+        <img src="./images/an ATM card sample.jpg.png" alt="Product Image">
+        <h2>SAMPLE OF AN ATM CARD</h2>
+        <p>Price: $150</p>
+        <button onclick="addToCart('SAMPLE OF AN ATM CARD', 150)">Add to Cart</button>
     </div>
-    <div>
-        <img alt="" src="./images/AGC.png">
-            <h2>A BUSINESS LOGO</h2>
-            <p>A SAMPLE OF A BUSINESS LOGO</p>
-            <span class="price">$50.00</span>
-            <button id="button">Add to Cart</button>
-        </div>
-        <div>
-        <img alt="" src="./images/an ATM card sample.jpg.png" class="atm-card">
-            <h2>AN ATM CARD</h2>
-            <p>A SAMPLE OF AN ATM CARD</p>
-            <span class="price">$1000.00</span>
-            <button id="button">Add to Cart</button>
-        </div>
-        <div>
-        <img alt="" src="./images/backview.jpg.png" class="atm-card">
-            <h2>THE BACKVIEW OF THE ATM CARD</h2>
-            <p>THE BACKVIEW OF THE ATM CARD</p>
-            <span class="price">$100.00</span>
-            <button id="button">Add to Cart</button>
-        </div>
-        <div>
-        <img alt="" src="./images/new product.jpg.jpg">
-            <h2>A SAMPLE OF NEW PRODUCT ANNOUNCEMENT</h2>
-            <p>A SAMPLE OF AN ADVERTISING GRAPHICS</p>
-            <span class="price">$100.00</span>
-            <button id="button">Add to Cart</button>
-        </div>     
-</div>
+    
+    <div class="product">
+        <img src="./images/backview.jpg.png" alt="Product Image">
+        <h2>BACKVIEW OF THE ATM CARD</h2>
+        <p>Price: $150</p>
+        <button onclick="addToCart('BACKVIEW OF THE ATM CARD', 150)">Add to Cart</button>
+    </div>
+
+    <!-- Shopping cart -->
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+    </div>
+
+    <script>
+        // JavaScript functions
+        const cart = [];
+        
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCart();
+        }
+        
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const totalElement = document.getElementById('cart-total');
+            
+            cartList.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price}`;
+                cartList.appendChild(listItem);
+                total += item.price;
+            });
+            
+            totalElement.textContent = total;
+        }
+    </script>
 </body>
 </html>
