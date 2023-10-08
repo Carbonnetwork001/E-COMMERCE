@@ -9,6 +9,8 @@ img {
 
 h1 {
     text-align: left;
+    font: 1em sans-serif;
+    font-size: medium;
 }
 
 p {
