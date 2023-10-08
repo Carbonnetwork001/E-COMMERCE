@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>A-RAHMAN GLOBAL CONCEPT</title>
+</head>
+<body>
+    <header>
+        <h1>WELCOME TO A-RAHMAN GLOBAL CONCEPT</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product-list">
+        <div class="product">
+            <img src="./images/A-Rahman.jpg" alt="Product 1">
+            <h2>A WHATSAPP PROFILE PHOTO</h2>
+            <p>THIS IS A GRAPHICS THAT WILL ENABLE YOUR FRIENDS AND COLLEAGUES TO REACH YOU BY JUST SCANNING THE CODES</p>
+            <span class="price">$200.00</span>
+            <button id="button">Add to Cart</button>
+            <script>// Get the button element by its id
+                const button = document.getElementById("button");
+        
+                // Add a click event listener to the button
+                button.addEventListener("click", function() {
+                    alert("item successfully added to cart!");
+                });</script>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 My E-commerce Store</p>
+    </footer>
+</html>
+
+</body>
+</html>
